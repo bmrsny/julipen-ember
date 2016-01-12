@@ -9,7 +9,7 @@ var Shot = DS.Model.extend({
   comments: DS.hasMany("comment")
 });
 
-Comment.reopenClass({ 
+Shot.reopenClass({ 
   FIXTURES: [
     {
       id: 1,

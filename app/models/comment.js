@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-let Comment = DS.Model.extend({
+var Comment = DS.Model.extend({
   body: DS.attr("string"),
   user: DS.belongsTo("user"),
   shot: DS.belongsTo("shot")
