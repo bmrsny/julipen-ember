@@ -135,7 +135,7 @@ define('julipen/tests/models/project.jshint', ['exports'], function (exports) {
   QUnit.module('JSHint - models');
   QUnit.test('models/project.js should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'models/project.js should pass jshint.\nmodels/project.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nmodels/project.js: line 3, col 1, \'let\' is available in ES6 (use esnext option) or Mozilla JS extensions (use moz).\nmodels/project.js: line 22, col 1, \'export\' is only available in ES6 (use esnext option).\n\n3 errors');
+    assert.ok(false, 'models/project.js should pass jshint.\nmodels/project.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nmodels/project.js: line 22, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors');
   });
 });
 define('julipen/tests/models/shot.jshint', ['exports'], function (exports) {
@@ -153,7 +153,7 @@ define('julipen/tests/models/user.jshint', ['exports'], function (exports) {
   QUnit.module('JSHint - models');
   QUnit.test('models/user.js should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'models/user.js should pass jshint.\nmodels/user.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nmodels/user.js: line 3, col 1, \'let\' is available in ES6 (use esnext option) or Mozilla JS extensions (use moz).\nmodels/user.js: line 24, col 1, \'export\' is only available in ES6 (use esnext option).\n\n3 errors');
+    assert.ok(false, 'models/user.js should pass jshint.\nmodels/user.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nmodels/user.js: line 24, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors');
   });
 });
 define('julipen/tests/project/route.jshint', ['exports'], function (exports) {

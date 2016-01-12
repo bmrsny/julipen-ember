@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-let Project = DS.Model.extend({
+var Project = DS.Model.extend({
   title: DS.attr("string"),
   description: DS.attr("string"),
   user: DS.belongsTo("user"),
