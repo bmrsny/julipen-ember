@@ -7,7 +7,7 @@ let Project = DS.Model.extend({
   shots: DS.hasMany("shot")
 });
 
-Comment.reopenClass({ 
+Project.reopenClass({ 
   FIXTURES: [
     {
       id: 1,

@@ -8,7 +8,7 @@ let User = DS.Model.extend({
   projects: DS.hasMany("project")
 });
 
-Comment.reopenClass({ 
+User.reopenClass({ 
   FIXTURES: [
     {
       id: 1,

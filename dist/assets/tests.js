@@ -126,7 +126,7 @@ define('julipen/tests/models/comment.jshint', ['exports'], function (exports) {
   QUnit.module('JSHint - models');
   QUnit.test('models/comment.js should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'models/comment.js should pass jshint.\nmodels/comment.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nmodels/comment.js: line 3, col 1, \'let\' is available in ES6 (use esnext option) or Mozilla JS extensions (use moz).\nmodels/comment.js: line 20, col 1, \'export\' is only available in ES6 (use esnext option).\n\n3 errors');
+    assert.ok(false, 'models/comment.js should pass jshint.\nmodels/comment.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nmodels/comment.js: line 20, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors');
   });
 });
 define('julipen/tests/models/project.jshint', ['exports'], function (exports) {
