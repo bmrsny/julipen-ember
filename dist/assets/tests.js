@@ -1,3 +1,12 @@
+define('julipen/tests/adapters/application.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - adapters');
+  QUnit.test('adapters/application.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'adapters/application.js should pass jshint.\nadapters/application.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nadapters/application.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors');
+  });
+});
 define('julipen/tests/app.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -102,13 +111,76 @@ define('julipen/tests/helpers/start-app.jshint', ['exports'], function (exports)
     assert.ok(true, 'helpers/start-app.js should pass jshint.');
   });
 });
+define('julipen/tests/login/route.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - login');
+  QUnit.test('login/route.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'login/route.js should pass jshint.\nlogin/route.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nlogin/route.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors');
+  });
+});
+define('julipen/tests/models/comment.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - models');
+  QUnit.test('models/comment.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'models/comment.js should pass jshint.\nmodels/comment.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nmodels/comment.js: line 3, col 1, \'let\' is available in ES6 (use esnext option) or Mozilla JS extensions (use moz).\nmodels/comment.js: line 20, col 1, \'export\' is only available in ES6 (use esnext option).\n\n3 errors');
+  });
+});
+define('julipen/tests/models/project.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - models');
+  QUnit.test('models/project.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'models/project.js should pass jshint.\nmodels/project.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nmodels/project.js: line 3, col 1, \'let\' is available in ES6 (use esnext option) or Mozilla JS extensions (use moz).\nmodels/project.js: line 22, col 1, \'export\' is only available in ES6 (use esnext option).\n\n3 errors');
+  });
+});
+define('julipen/tests/models/shot.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - models');
+  QUnit.test('models/shot.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'models/shot.js should pass jshint.\nmodels/shot.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nmodels/shot.js: line 26, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors');
+  });
+});
+define('julipen/tests/models/user.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - models');
+  QUnit.test('models/user.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'models/user.js should pass jshint.\nmodels/user.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nmodels/user.js: line 3, col 1, \'let\' is available in ES6 (use esnext option) or Mozilla JS extensions (use moz).\nmodels/user.js: line 24, col 1, \'export\' is only available in ES6 (use esnext option).\n\n3 errors');
+  });
+});
+define('julipen/tests/project/route.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - project');
+  QUnit.test('project/route.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'project/route.js should pass jshint.\nproject/route.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nproject/route.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors');
+  });
+});
 define('julipen/tests/router.jshint', ['exports'], function (exports) {
   'use strict';
 
   QUnit.module('JSHint - .');
   QUnit.test('router.js should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'router.js should pass jshint.\nrouter.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nrouter.js: line 2, col 1, \'import\' is only available in ES6 (use esnext option).\nrouter.js: line 4, col 1, \'const\' is available in ES6 (use esnext option) or Mozilla JS extensions (use moz).\nrouter.js: line 11, col 1, \'export\' is only available in ES6 (use esnext option).\n\n4 errors');
+    assert.ok(false, 'router.js should pass jshint.\nrouter.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nrouter.js: line 2, col 1, \'import\' is only available in ES6 (use esnext option).\nrouter.js: line 4, col 1, \'const\' is available in ES6 (use esnext option) or Mozilla JS extensions (use moz).\nrouter.js: line 14, col 1, \'export\' is only available in ES6 (use esnext option).\n\n4 errors');
+  });
+});
+define('julipen/tests/shot/route.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - shot');
+  QUnit.test('shot/route.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'shot/route.js should pass jshint.\nshot/route.js: line 1, col 1, \'import\' is only available in ES6 (use esnext option).\nshot/route.js: line 3, col 1, \'export\' is only available in ES6 (use esnext option).\n\n2 errors');
   });
 });
 define('julipen/tests/test-helper', ['exports', 'julipen/tests/helpers/resolver', 'ember-qunit'], function (exports, _julipenTestsHelpersResolver, _emberQunit) {
@@ -122,6 +194,179 @@ define('julipen/tests/test-helper.jshint', ['exports'], function (exports) {
   QUnit.test('test-helper.js should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'test-helper.js should pass jshint.');
+  });
+});
+define('julipen/tests/unit/adapters/application-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('adapter:application', 'Unit | Adapter | application', {
+    // Specify the other units that are required for this test.
+    // needs: ['serializer:foo']
+  });
+
+  // Replace this with your real tests.
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var adapter = this.subject();
+    assert.ok(adapter);
+  });
+});
+define('julipen/tests/unit/adapters/application-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/adapters');
+  QUnit.test('unit/adapters/application-test.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/adapters/application-test.js should pass jshint.');
+  });
+});
+define('julipen/tests/unit/login/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:login', 'Unit | Route | login', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('julipen/tests/unit/login/route-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/login');
+  QUnit.test('unit/login/route-test.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/login/route-test.js should pass jshint.');
+  });
+});
+define('julipen/tests/unit/models/comment-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForModel)('comment', 'Unit | Model | comment', {
+    // Specify the other units that are required for this test.
+    needs: []
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var model = this.subject();
+    // let store = this.store();
+    assert.ok(!!model);
+  });
+});
+define('julipen/tests/unit/models/comment-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/models');
+  QUnit.test('unit/models/comment-test.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/models/comment-test.js should pass jshint.');
+  });
+});
+define('julipen/tests/unit/models/project-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForModel)('project', 'Unit | Model | project', {
+    // Specify the other units that are required for this test.
+    needs: []
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var model = this.subject();
+    // let store = this.store();
+    assert.ok(!!model);
+  });
+});
+define('julipen/tests/unit/models/project-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/models');
+  QUnit.test('unit/models/project-test.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/models/project-test.js should pass jshint.');
+  });
+});
+define('julipen/tests/unit/models/shot-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForModel)('shot', 'Unit | Model | shot', {
+    // Specify the other units that are required for this test.
+    needs: []
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var model = this.subject();
+    // let store = this.store();
+    assert.ok(!!model);
+  });
+});
+define('julipen/tests/unit/models/shot-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/models');
+  QUnit.test('unit/models/shot-test.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/models/shot-test.js should pass jshint.');
+  });
+});
+define('julipen/tests/unit/models/user-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForModel)('user', 'Unit | Model | user', {
+    // Specify the other units that are required for this test.
+    needs: []
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var model = this.subject();
+    // let store = this.store();
+    assert.ok(!!model);
+  });
+});
+define('julipen/tests/unit/models/user-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/models');
+  QUnit.test('unit/models/user-test.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/models/user-test.js should pass jshint.');
+  });
+});
+define('julipen/tests/unit/project/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:projects', 'Unit | Route | projects', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('julipen/tests/unit/project/route-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/project');
+  QUnit.test('unit/project/route-test.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/project/route-test.js should pass jshint.');
+  });
+});
+define('julipen/tests/unit/shot/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('route:shot', 'Unit | Route | shot', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
+  });
+});
+define('julipen/tests/unit/shot/route-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/shot');
+  QUnit.test('unit/shot/route-test.js should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/shot/route-test.js should pass jshint.');
   });
 });
 /* jshint ignore:start */
