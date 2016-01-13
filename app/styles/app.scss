@@ -42,7 +42,7 @@ h2, h3 {
 
 .j-header {
     background: $primary;
-    box-shadow: 0 3px 0 #CCC, 0 6px 0 white, 0 0 9px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 0 #AAA, 0 6px 0 white, 0 0 9px rgba(0,0,0,0.3);
     color: white;
     line-height: 50px;
     padding: 0 10px;
@@ -60,8 +60,10 @@ h2, h3 {
     h2 {
     	display: inline-block;
         font-size: 16px;
+        font-style: italic;
         font-weight: 700;
         margin-bottom: 0;
+        text-shadow: -1px -1px 0 #AAA, -1px 1px 0 #AAA, 1px -1px 0 #AAA, 1px 1px 0 #AAA;
         text-transform: uppercase;
     }
 }
