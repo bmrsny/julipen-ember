@@ -443,7 +443,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+acf00acb"});
+  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+db753ac6"});
 }
 
 /* jshint ignore:end */
