@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-let User = DS.Model.extend({
+var User = DS.Model.extend({
   name: DS.attr("string"),
   email_address: DS.attr("string"),
   comments: DS.hasMany("comment"),
@@ -8,7 +8,7 @@ let User = DS.Model.extend({
   projects: DS.hasMany("project")
 });
 
-Comment.reopenClass({ 
+User.reopenClass({ 
   FIXTURES: [
     {
       id: 1,
