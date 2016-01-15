@@ -382,7 +382,7 @@ define("julipen/templates/application", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 4,
+            "line": 15,
             "column": 0
           }
         },
@@ -393,14 +393,47 @@ define("julipen/templates/application", ["exports"], function (exports) {
       hasRendered: false,
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
-        var el1 = dom.createElement("h2");
-        dom.setAttribute(el1, "id", "title");
-        var el2 = dom.createTextNode("Julipen");
+        var el1 = dom.createElement("header");
+        dom.setAttribute(el1, "class", "j-header");
+        var el2 = dom.createTextNode("\n	");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("img");
+        dom.setAttribute(el2, "src", "http://placehold.it/40x40");
+        dom.setAttribute(el2, "class", "logo");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n	");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("h2");
+        var el3 = dom.createTextNode("Julipen");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n\n");
         dom.appendChild(el0, el1);
-        var el1 = dom.createComment("");
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "class", "page-wrap");
+        var el2 = dom.createTextNode("\n	");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "container");
+        var el3 = dom.createTextNode("\n		");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n	");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("footer");
+        dom.setAttribute(el1, "class", "j-footer");
+        var el2 = dom.createTextNode("\n	© 2016 All Rights Reserved. A project by the Threatsim devs, in honor of Julian. Kinda.\n");
+        dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
@@ -408,10 +441,10 @@ define("julipen/templates/application", ["exports"], function (exports) {
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var morphs = new Array(1);
-        morphs[0] = dom.createMorphAt(fragment, 2, 2, contextualElement);
+        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["content", "outlet", ["loc", [null, [3, 0], [3, 10]]]]],
+      statements: [["content", "outlet", ["loc", [null, [8, 2], [8, 12]]]]],
       locals: [],
       templates: []
     };
@@ -443,7 +476,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+db753ac6"});
+  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+2046a156"});
 }
 
 /* jshint ignore:end */
