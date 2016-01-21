@@ -137,7 +137,7 @@ define("julipen/components/login-form/template", ["exports"], function (exports)
         morphs[3] = dom.createMorphAt(fragment, 4, 4, contextualElement);
         return morphs;
       },
-      statements: [["element", "action", ["submit"], ["on", "submit"], ["loc", [null, [3, 6], [3, 37]]]], ["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "credentials.email", ["loc", [null, [6, 18], [6, 35]]]]], [], []], "class", "form-control"], ["loc", [null, [6, 4], [6, 58]]]], ["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "credentials.password", ["loc", [null, [11, 18], [11, 38]]]]], [], []], "type", "password", "class", "form-control"], ["loc", [null, [11, 4], [11, 77]]]], ["content", "yield", ["loc", [null, [16, 0], [16, 9]]]]],
+      statements: [["element", "action", ["submit"], ["on", "submit"], ["loc", [null, [3, 6], [3, 37]]]], ["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "credentials.identification", ["loc", [null, [6, 18], [6, 44]]]]], [], []], "class", "form-control"], ["loc", [null, [6, 4], [6, 67]]]], ["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "credentials.password", ["loc", [null, [11, 18], [11, 38]]]]], [], []], "type", "password", "class", "form-control"], ["loc", [null, [11, 4], [11, 77]]]], ["content", "yield", ["loc", [null, [16, 0], [16, 9]]]]],
       locals: [],
       templates: []
     };
@@ -189,10 +189,36 @@ define('julipen/initializers/export-application-global', ['exports', 'ember', 'j
     initialize: initialize
   };
 });
+define('julipen/initializers/simple-auth-token', ['exports', 'simple-auth-token/authenticators/token', 'simple-auth-token/authenticators/jwt', 'simple-auth-token/authorizers/token', 'simple-auth-token/configuration', 'julipen/config/environment'], function (exports, _simpleAuthTokenAuthenticatorsToken, _simpleAuthTokenAuthenticatorsJwt, _simpleAuthTokenAuthorizersToken, _simpleAuthTokenConfiguration, _julipenConfigEnvironment) {
+
+  /**
+    Ember Simple Auth Token's Initializer.
+    By default load both the Token and JWT (with refresh) Authenticators.
+  */
+  exports['default'] = {
+    name: 'simple-auth-token',
+    before: 'simple-auth',
+    initialize: function initialize(container) {
+      _simpleAuthTokenConfiguration['default'].load(container, _julipenConfigEnvironment['default']['simple-auth-token'] || {});
+      container.register('simple-auth-authorizer:token', _simpleAuthTokenAuthorizersToken['default']);
+      container.register('simple-auth-authenticator:token', _simpleAuthTokenAuthenticatorsToken['default']);
+      container.register('simple-auth-authenticator:jwt', _simpleAuthTokenAuthenticatorsJwt['default']);
+    }
+  };
+});
+define('julipen/initializers/simple-auth', ['exports', 'simple-auth/configuration', 'simple-auth/setup', 'julipen/config/environment'], function (exports, _simpleAuthConfiguration, _simpleAuthSetup, _julipenConfigEnvironment) {
+  exports['default'] = {
+    name: 'simple-auth',
+    initialize: function initialize(container, application) {
+      _simpleAuthConfiguration['default'].load(container, _julipenConfigEnvironment['default']['simple-auth'] || {});
+      (0, _simpleAuthSetup['default'])(container, application);
+    }
+  };
+});
 define('julipen/login/route', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
     model: function model(argument) {
-      return _ember['default'].Object.create({ email: '', password: '' });
+      return _ember['default'].Object.create({ identification: '', password: '' });
     },
 
     setupController: function setupController(controller, model) {
@@ -201,7 +227,7 @@ define('julipen/login/route', ['exports', 'ember'], function (exports, _ember) {
 
     actions: {
       authenticate: function authenticate(credentials) {
-        console.log(credentials);
+        this.get('session').authenticate('simple-auth-authenticator:jwt', credentials);
       }
     }
   });
@@ -591,7 +617,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+3307b1f2"});
+  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+5c302eb2"});
 }
 
 /* jshint ignore:end */
