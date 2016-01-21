@@ -4,7 +4,9 @@
 /* jshint ignore:end */
 
 define('julipen/adapters/application', ['exports', 'ember-data'], function (exports, _emberData) {
-  exports['default'] = _emberData['default'].FixtureAdapter.extend({});
+  exports['default'] = _emberData['default'].RESTAdapter.extend({
+    namespace: 'api'
+  });
 });
 define('julipen/app', ['exports', 'ember', 'ember/resolver', 'ember/load-initializers', 'julipen/config/environment'], function (exports, _ember, _emberResolver, _emberLoadInitializers, _julipenConfigEnvironment) {
 
@@ -44,19 +46,6 @@ define('julipen/initializers/app-version', ['exports', 'ember-cli-app-version/in
     initialize: (0, _emberCliAppVersionInitializerFactory['default'])(_julipenConfigEnvironment['default'].APP.name, _julipenConfigEnvironment['default'].APP.version)
   };
 });
-define('julipen/initializers/ember-simple-auth', ['exports', 'ember', 'julipen/config/environment', 'ember-simple-auth/configuration', 'ember-simple-auth/initializers/setup-session', 'ember-simple-auth/initializers/setup-session-service'], function (exports, _ember, _julipenConfigEnvironment, _emberSimpleAuthConfiguration, _emberSimpleAuthInitializersSetupSession, _emberSimpleAuthInitializersSetupSessionService) {
-  exports['default'] = {
-    name: 'ember-simple-auth',
-    initialize: function initialize(registry) {
-      var config = _julipenConfigEnvironment['default']['ember-simple-auth'] || {};
-      config.baseURL = _julipenConfigEnvironment['default'].baseURL;
-      _emberSimpleAuthConfiguration['default'].load(config);
-
-      (0, _emberSimpleAuthInitializersSetupSession['default'])(registry);
-      (0, _emberSimpleAuthInitializersSetupSessionService['default'])(registry);
-    }
-  };
-});
 define('julipen/initializers/export-application-global', ['exports', 'ember', 'julipen/config/environment'], function (exports, _ember, _julipenConfigEnvironment) {
   exports.initialize = initialize;
 
@@ -89,14 +78,6 @@ define('julipen/initializers/export-application-global', ['exports', 'ember', 'j
     name: 'export-application-global',
 
     initialize: initialize
-  };
-});
-define('julipen/instance-initializers/ember-simple-auth', ['exports', 'ember-simple-auth/instance-initializers/setup-session-restoration'], function (exports, _emberSimpleAuthInstanceInitializersSetupSessionRestoration) {
-  exports['default'] = {
-    name: 'ember-simple-auth',
-    initialize: function initialize(instance) {
-      (0, _emberSimpleAuthInstanceInitializersSetupSessionRestoration['default'])(instance);
-    }
   };
 });
 define('julipen/login/route', ['exports', 'ember'], function (exports, _ember) {
@@ -184,8 +165,7 @@ define("julipen/models/project", ["exports", "ember-data"], function (exports, _
   exports["default"] = Project;
 });
 define("julipen/models/shot", ["exports", "ember-data"], function (exports, _emberData) {
-
-  var Shot = _emberData["default"].Model.extend({
+  exports["default"] = _emberData["default"].Model.extend({
     source: _emberData["default"].attr("string"),
     title: _emberData["default"].attr("string"),
     description: _emberData["default"].attr("string"),
@@ -193,20 +173,6 @@ define("julipen/models/shot", ["exports", "ember-data"], function (exports, _emb
     user: _emberData["default"].belongsTo("user"),
     comments: _emberData["default"].hasMany("comment")
   });
-
-  Shot.reopenClass({
-    FIXTURES: [{
-      id: 1,
-      source: "/images/shot1.jpg",
-      title: "Unicorn Dancing",
-      description: "This is a picture of a unicorn doing the macarena",
-      project: 1,
-      user: 1,
-      comment: 1
-    }]
-  });
-
-  exports["default"] = Shot;
 });
 define("julipen/models/user", ["exports", "ember-data"], function (exports, _emberData) {
 
@@ -288,15 +254,6 @@ define('julipen/router', ['exports', 'ember', 'julipen/config/environment'], fun
   });
 
   exports['default'] = Router;
-});
-define('julipen/routes/application', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Route.extend();
-});
-define('julipen/services/session', ['exports', 'ember-simple-auth/services/session'], function (exports, _emberSimpleAuthServicesSession) {
-  exports['default'] = _emberSimpleAuthServicesSession['default'];
-});
-define('julipen/session-stores/application', ['exports', 'ember-simple-auth/session-stores/adaptive'], function (exports, _emberSimpleAuthSessionStoresAdaptive) {
-  exports['default'] = _emberSimpleAuthSessionStoresAdaptive['default'].extend();
 });
 define("julipen/shot/route", ["exports", "ember"], function (exports, _ember) {
   exports["default"] = _ember["default"].Route.extend({
@@ -506,7 +463,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+0e0c991a"});
+  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+76ed148f"});
 }
 
 /* jshint ignore:end */
