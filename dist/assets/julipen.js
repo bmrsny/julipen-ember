@@ -803,7 +803,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+f5fb11a8"});
+  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+8f30a4a5"});
 }
 
 /* jshint ignore:end */
