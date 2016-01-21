@@ -1,6 +1,11 @@
 <header class="j-header">
 	<img src="http://placehold.it/40x40" class="logo">
 	<h2>Julipen</h2>
+      {{#if session.isAuthenticated}}
+        <li><a {{action 'logout'}}>Logout</a></li>
+      {{else}}
+        {{#link-to 'login' tagname="li"}}<a href="">Log in</a>{{/link-to}}
+      {{/if}}
 </header>
 
 <div class="page-wrap">
