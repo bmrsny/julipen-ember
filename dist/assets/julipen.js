@@ -34,6 +34,115 @@ define('julipen/components/app-version', ['exports', 'ember-cli-app-version/comp
     name: name
   });
 });
+define('julipen/components/login-form/component', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Component.extend({
+    actions: {
+      submit: function submit() {
+        this.sendAction('action', this.get('credentials'));
+      }
+    }
+  });
+});
+define("julipen/components/login-form/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    return {
+      meta: {
+        "revision": "Ember@1.13.11",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 17,
+            "column": 0
+          }
+        },
+        "moduleName": "julipen/components/login-form/template.hbs"
+      },
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createElement("h2");
+        var el2 = dom.createTextNode("Log in");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("form");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "form-group");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("label");
+        dom.setAttribute(el3, "for", "");
+        var el4 = dom.createTextNode("Email");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode(" \n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n   ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "form-group");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("label");
+        dom.setAttribute(el3, "for", "");
+        var el4 = dom.createTextNode("Password");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode(" \n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("button");
+        dom.setAttribute(el2, "class", "btn");
+        dom.setAttribute(el2, "type", "submit");
+        var el3 = dom.createTextNode("Login");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var element0 = dom.childAt(fragment, [2]);
+        var morphs = new Array(4);
+        morphs[0] = dom.createElementMorph(element0);
+        morphs[1] = dom.createMorphAt(dom.childAt(element0, [1]), 3, 3);
+        morphs[2] = dom.createMorphAt(dom.childAt(element0, [3]), 3, 3);
+        morphs[3] = dom.createMorphAt(fragment, 4, 4, contextualElement);
+        return morphs;
+      },
+      statements: [["element", "action", ["submit"], ["on", "submit"], ["loc", [null, [3, 6], [3, 37]]]], ["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "credentials.email", ["loc", [null, [6, 18], [6, 35]]]]], [], []], "class", "form-control"], ["loc", [null, [6, 4], [6, 58]]]], ["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "credentials.password", ["loc", [null, [11, 18], [11, 38]]]]], [], []], "type", "password", "class", "form-control"], ["loc", [null, [11, 4], [11, 77]]]], ["content", "yield", ["loc", [null, [16, 0], [16, 9]]]]],
+      locals: [],
+      templates: []
+    };
+  })());
+});
 define('julipen/controllers/array', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Controller;
 });
@@ -81,7 +190,21 @@ define('julipen/initializers/export-application-global', ['exports', 'ember', 'j
   };
 });
 define('julipen/login/route', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Route.extend({});
+  exports['default'] = _ember['default'].Route.extend({
+    model: function model(argument) {
+      return _ember['default'].Object.create({ email: '', password: '' });
+    },
+
+    setupController: function setupController(controller, model) {
+      controller.set('credentials', model);
+    },
+
+    actions: {
+      authenticate: function authenticate(credentials) {
+        console.log(credentials);
+      }
+    }
+  });
 });
 define("julipen/login/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
@@ -95,7 +218,7 @@ define("julipen/login/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 2,
+            "line": 3,
             "column": 0
           }
         },
@@ -110,15 +233,20 @@ define("julipen/login/template", ["exports"], function (exports) {
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var morphs = new Array(1);
+        var morphs = new Array(2);
         morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+        morphs[1] = dom.createMorphAt(fragment, 2, 2, contextualElement);
         dom.insertBoundary(fragment, 0);
         return morphs;
       },
-      statements: [["content", "outlet", ["loc", [null, [1, 0], [1, 10]]]]],
+      statements: [["inline", "login-form", [], ["credentials", ["subexpr", "@mut", [["get", "credentials", ["loc", [null, [1, 25], [1, 36]]]]], [], []], "action", "authenticate"], ["loc", [null, [1, 0], [1, 60]]]], ["content", "outlet", ["loc", [null, [2, 0], [2, 10]]]]],
       locals: [],
       templates: []
     };
@@ -463,7 +591,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+76ed148f"});
+  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+3307b1f2"});
 }
 
 /* jshint ignore:end */
