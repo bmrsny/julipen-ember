@@ -11,7 +11,9 @@ export default Ember.Route.extend({
 
   actions : {
     authenticate : function(credentials) {
-      this.get('session').authenticate('simple-auth-authenticator:jwt', credentials)
+      this.get('session').authenticate('simple-auth-authenticator:jwt', credentials).then(() => {
+        this.transitionTo("/");
+      })
     }
   }
 });

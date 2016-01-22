@@ -143,6 +143,183 @@ define("julipen/components/login-form/template", ["exports"], function (exports)
     };
   })());
 });
+define('julipen/components/nav-bar/component', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Component.extend({
+    actions: {
+      logout: function logout() {
+        this.get('session').invalidate();
+      }
+    }
+  });
+});
+define("julipen/components/nav-bar/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@1.13.11",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 3,
+              "column": 0
+            }
+          },
+          "moduleName": "julipen/components/nav-bar/template.hbs"
+        },
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("  ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("li");
+          var el2 = dom.createElement("a");
+          var el3 = dom.createTextNode("Logout");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var element0 = dom.childAt(fragment, [1, 0]);
+          var morphs = new Array(1);
+          morphs[0] = dom.createElementMorph(element0);
+          return morphs;
+        },
+        statements: [["element", "action", ["logout"], [], ["loc", [null, [2, 9], [2, 28]]]]],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child1 = (function () {
+      var child0 = (function () {
+        return {
+          meta: {
+            "revision": "Ember@1.13.11",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 4,
+                "column": 2
+              },
+              "end": {
+                "line": 4,
+                "column": 56
+              }
+            },
+            "moduleName": "julipen/components/nav-bar/template.hbs"
+          },
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createElement("a");
+            dom.setAttribute(el1, "href", "");
+            var el2 = dom.createTextNode("Log in");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes() {
+            return [];
+          },
+          statements: [],
+          locals: [],
+          templates: []
+        };
+      })();
+      return {
+        meta: {
+          "revision": "Ember@1.13.11",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 5,
+              "column": 0
+            }
+          },
+          "moduleName": "julipen/components/nav-bar/template.hbs"
+        },
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("  ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
+        },
+        statements: [["block", "link-to", ["login"], ["tagname", "li"], 0, null, ["loc", [null, [4, 2], [4, 68]]]]],
+        locals: [],
+        templates: [child0]
+      };
+    })();
+    return {
+      meta: {
+        "revision": "Ember@1.13.11",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 8,
+            "column": 0
+          }
+        },
+        "moduleName": "julipen/components/nav-bar/template.hbs"
+      },
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var morphs = new Array(2);
+        morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+        morphs[1] = dom.createMorphAt(fragment, 2, 2, contextualElement);
+        dom.insertBoundary(fragment, 0);
+        return morphs;
+      },
+      statements: [["block", "if", [["get", "session.isAuthenticated", ["loc", [null, [1, 6], [1, 29]]]]], [], 0, 1, ["loc", [null, [1, 0], [5, 7]]]], ["content", "yield", ["loc", [null, [7, 0], [7, 9]]]]],
+      locals: [],
+      templates: [child0, child1]
+    };
+  })());
+});
 define('julipen/controllers/array', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Controller;
 });
@@ -227,7 +404,11 @@ define('julipen/login/route', ['exports', 'ember'], function (exports, _ember) {
 
     actions: {
       authenticate: function authenticate(credentials) {
-        this.get('session').authenticate('simple-auth-authenticator:jwt', credentials);
+        var _this = this;
+
+        this.get('session').authenticate('simple-auth-authenticator:jwt', credentials).then(function () {
+          _this.transitionTo("/");
+        });
       }
     }
   });
@@ -523,7 +704,7 @@ define("julipen/templates/application", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 15,
+            "line": 16,
             "column": 0
           }
         },
@@ -547,6 +728,10 @@ define("julipen/templates/application", ["exports"], function (exports) {
         var el2 = dom.createElement("h2");
         var el3 = dom.createTextNode("Julipen");
         dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n      ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
@@ -581,11 +766,12 @@ define("julipen/templates/application", ["exports"], function (exports) {
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var morphs = new Array(1);
-        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
+        var morphs = new Array(2);
+        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 5, 5);
+        morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["content", "outlet", ["loc", [null, [8, 2], [8, 12]]]]],
+      statements: [["inline", "nav-bar", [], ["session", ["subexpr", "@mut", [["get", "session", ["loc", [null, [4, 24], [4, 31]]]]], [], []]], ["loc", [null, [4, 6], [4, 33]]]], ["content", "outlet", ["loc", [null, [9, 2], [9, 12]]]]],
       locals: [],
       templates: []
     };
@@ -617,7 +803,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+5c302eb2"});
+  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+f5ecee5b"});
 }
 
 /* jshint ignore:end */
