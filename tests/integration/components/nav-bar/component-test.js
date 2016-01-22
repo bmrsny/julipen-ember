@@ -11,15 +11,5 @@ test('it renders', function(assert) {
   // Handle any actions with this.on('myAction', function(val) { ... });" + EOL + EOL +
 
   this.render(hbs`{{nav-bar}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:" + EOL +
-  this.render(hbs`
-    {{#nav-bar}}
-      template block text
-    {{/nav-bar}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), 'Log in');
 });
