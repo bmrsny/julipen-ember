@@ -704,7 +704,7 @@ define("julipen/templates/application", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 21,
+            "line": 16,
             "column": 0
           }
         },
@@ -771,7 +771,7 @@ define("julipen/templates/application", ["exports"], function (exports) {
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "nav-bar", [], ["session", ["subexpr", "@mut", [["get", "session", ["loc", [null, [4, 24], [4, 31]]]]], [], []]], ["loc", [null, [4, 6], [4, 33]]]], ["content", "outlet", ["loc", [null, [14, 2], [14, 12]]]]],
+      statements: [["inline", "nav-bar", [], ["session", ["subexpr", "@mut", [["get", "session", ["loc", [null, [4, 24], [4, 31]]]]], [], []]], ["loc", [null, [4, 6], [4, 33]]]], ["content", "outlet", ["loc", [null, [9, 2], [9, 12]]]]],
       locals: [],
       templates: []
     };
