@@ -822,8 +822,8 @@ define('julipen/router', ['exports', 'ember', 'julipen/config/environment'], fun
   Router.map(function () {
     this.route('login');
     this.route('projects', { path: '/projects' }, function () {
-      this.route('project', { path: '/project/:project_id' }, function () {
-        this.route('shot', { path: 'shot/:shot_id' }, function () {});
+      this.route('project', { path: '/:project_id' }, function () {
+        this.route('shot', { path: '/:shot_id' }, function () {});
       });
     });
   });
@@ -945,7 +945,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+7cf34eeb"});
+  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+30e9d04c"});
 }
 
 /* jshint ignore:end */
