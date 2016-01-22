@@ -1,1 +1,20 @@
+{{#each model as |project| }}
+ <div style="margin-top: 200px;">
+   {{#link-to 'projects.project' project }}
+     {{ project.title }}
+   {{/link-to}}
+   {{ project.description }}
+ </div>
+{{/each}}
+
+<div class="field">
+ Title: {{input value=title}}
+</div>
+
+<div class="field">
+ Description: {{input value=description}}
+</div>
+
+<button {{action 'addProject'}}>Add Project</button>
+
 {{outlet}}
