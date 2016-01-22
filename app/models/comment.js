@@ -6,7 +6,7 @@ var Comment = DS.Model.extend({
   shot: DS.belongsTo("shot")
 });
 
-Comment.reopenClass({ 
+Comment.reopenClass({
   FIXTURES: [
     {
       id: 1,
