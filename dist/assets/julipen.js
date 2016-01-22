@@ -655,11 +655,11 @@ define("julipen/projects/template", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
-                "line": 3,
+                "line": 13,
                 "column": 3
               },
               "end": {
-                "line": 5,
+                "line": 15,
                 "column": 3
               }
             },
@@ -683,7 +683,7 @@ define("julipen/projects/template", ["exports"], function (exports) {
             morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["content", "project.title", ["loc", [null, [4, 5], [4, 24]]]]],
+          statements: [["content", "project.title", ["loc", [null, [14, 5], [14, 24]]]]],
           locals: [],
           templates: []
         };
@@ -694,11 +694,11 @@ define("julipen/projects/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 1,
+              "line": 11,
               "column": 0
             },
             "end": {
-              "line": 8,
+              "line": 18,
               "column": 0
             }
           },
@@ -712,7 +712,6 @@ define("julipen/projects/template", ["exports"], function (exports) {
           var el1 = dom.createTextNode(" ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("div");
-          dom.setAttribute(el1, "style", "margin-top: 200px;");
           var el2 = dom.createTextNode("\n");
           dom.appendChild(el1, el2);
           var el2 = dom.createComment("");
@@ -735,7 +734,7 @@ define("julipen/projects/template", ["exports"], function (exports) {
           morphs[1] = dom.createMorphAt(element0, 3, 3);
           return morphs;
         },
-        statements: [["block", "link-to", ["projects.project", ["get", "project", ["loc", [null, [3, 33], [3, 40]]]]], [], 0, null, ["loc", [null, [3, 3], [5, 15]]]], ["content", "project.description", ["loc", [null, [6, 3], [6, 28]]]]],
+        statements: [["block", "link-to", ["projects.project", ["get", "project", ["loc", [null, [13, 33], [13, 40]]]]], [], 0, null, ["loc", [null, [13, 3], [15, 15]]]], ["content", "project.description", ["loc", [null, [16, 3], [16, 28]]]]],
         locals: ["project"],
         templates: [child0]
       };
@@ -761,10 +760,6 @@ define("julipen/projects/template", ["exports"], function (exports) {
       hasRendered: false,
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
-        var el1 = dom.createComment("");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
         var el1 = dom.createElement("div");
         dom.setAttribute(el1, "class", "field");
         var el2 = dom.createTextNode("\n Title: ");
@@ -795,21 +790,24 @@ define("julipen/projects/template", ["exports"], function (exports) {
         dom.appendChild(el0, el1);
         var el1 = dom.createComment("");
         dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var element1 = dom.childAt(fragment, [6]);
+        var element1 = dom.childAt(fragment, [4]);
         var morphs = new Array(5);
-        morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 1, 1);
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2]), 1, 1);
-        morphs[2] = dom.createMorphAt(dom.childAt(fragment, [4]), 1, 1);
-        morphs[3] = dom.createElementMorph(element1);
+        morphs[2] = dom.createElementMorph(element1);
+        morphs[3] = dom.createMorphAt(fragment, 6, 6, contextualElement);
         morphs[4] = dom.createMorphAt(fragment, 8, 8, contextualElement);
-        dom.insertBoundary(fragment, 0);
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "each", [["get", "model", ["loc", [null, [1, 8], [1, 13]]]]], [], 0, null, ["loc", [null, [1, 0], [8, 9]]]], ["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "title", ["loc", [null, [11, 22], [11, 27]]]]], [], []]], ["loc", [null, [11, 8], [11, 29]]]], ["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "description", ["loc", [null, [15, 28], [15, 39]]]]], [], []]], ["loc", [null, [15, 14], [15, 41]]]], ["element", "action", ["addProject"], [], ["loc", [null, [18, 8], [18, 31]]]], ["content", "outlet", ["loc", [null, [20, 0], [20, 10]]]]],
+      statements: [["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "title", ["loc", [null, [2, 22], [2, 27]]]]], [], []]], ["loc", [null, [2, 8], [2, 29]]]], ["inline", "input", [], ["value", ["subexpr", "@mut", [["get", "description", ["loc", [null, [6, 28], [6, 39]]]]], [], []]], ["loc", [null, [6, 14], [6, 41]]]], ["element", "action", ["addProject"], [], ["loc", [null, [9, 8], [9, 31]]]], ["block", "each", [["get", "model", ["loc", [null, [11, 8], [11, 13]]]]], [], 0, null, ["loc", [null, [11, 0], [18, 9]]]], ["content", "outlet", ["loc", [null, [20, 0], [20, 10]]]]],
       locals: [],
       templates: [child0]
     };
@@ -869,11 +867,15 @@ define("julipen/templates/application", ["exports"], function (exports) {
         var el3 = dom.createTextNode("Julipen");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n      ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createComment("");
-        dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "class", "nav");
+        dom.setAttribute(el1, "style", "margin-top: 100px;");
+        var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n\n");
@@ -907,11 +909,11 @@ define("julipen/templates/application", ["exports"], function (exports) {
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var morphs = new Array(2);
-        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 5, 5);
-        morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2, 1]), 1, 1);
+        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [2]), 0, 0);
+        morphs[1] = dom.createMorphAt(dom.childAt(fragment, [4, 1]), 1, 1);
         return morphs;
       },
-      statements: [["inline", "nav-bar", [], ["session", ["subexpr", "@mut", [["get", "session", ["loc", [null, [4, 24], [4, 31]]]]], [], []]], ["loc", [null, [4, 6], [4, 33]]]], ["content", "outlet", ["loc", [null, [9, 2], [9, 12]]]]],
+      statements: [["inline", "nav-bar", [], ["session", ["subexpr", "@mut", [["get", "session", ["loc", [null, [5, 62], [5, 69]]]]], [], []]], ["loc", [null, [5, 44], [5, 71]]]], ["content", "outlet", ["loc", [null, [9, 2], [9, 12]]]]],
       locals: [],
       templates: []
     };
@@ -943,7 +945,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+00780e40"});
+  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+7cf34eeb"});
 }
 
 /* jshint ignore:end */

@@ -13,7 +13,7 @@ export default Ember.Route.extend({
     authenticate : function(credentials) {
       this.get('session').authenticate('simple-auth-authenticator:jwt', credentials).then(() => {
         this.transitionTo("/");
-      })
+      });
     }
   }
 });

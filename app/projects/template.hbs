@@ -1,12 +1,3 @@
-{{#each model as |project| }}
- <div style="margin-top: 200px;">
-   {{#link-to 'projects.project' project }}
-     {{ project.title }}
-   {{/link-to}}
-   {{ project.description }}
- </div>
-{{/each}}
-
 <div class="field">
  Title: {{input value=title}}
 </div>
@@ -16,5 +7,14 @@
 </div>
 
 <button {{action 'addProject'}}>Add Project</button>
+
+{{#each model as |project| }}
+ <div>
+   {{#link-to 'projects.project' project }}
+     {{ project.title }}
+   {{/link-to}}
+   {{ project.description }}
+ </div>
+{{/each}}
 
 {{outlet}}
