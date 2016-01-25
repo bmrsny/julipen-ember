@@ -12,7 +12,6 @@ Router.map(function() {
       this.route('shot', { path: 'shot/:shot_id'}, function() {} );
     });
   });
-  // this.route('dashboard', { path: '/'});
   this.route('singles');
 });
 
