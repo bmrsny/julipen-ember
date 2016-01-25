@@ -9,7 +9,7 @@ Router.map(function() {
   this.route('login');
   this.route('projects', { path: '/projects' }, function() {
     this.route('project', { path: '/:project_id'}, function() {
-      this.route('shot', { path: '/:shot_id'}, function() {} );
+      this.route('shot', { path: 'shot/:shot_id'}, function() {} );
     });
   });
 });
