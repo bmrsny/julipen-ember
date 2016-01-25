@@ -21,8 +21,9 @@ body {
 
 h1 {
     color: white;
+    font-size: 40px;
     font-weight: 300;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 h2, h3 {
@@ -33,7 +34,7 @@ h2, h3 {
     h3 { font-size: 32px; }
 
 a { 
-    color: lighten(#314480,20%);
+    color: lighten($primary,20%);
     text-decoration: none; 
 }
 
@@ -41,7 +42,15 @@ a {
     margin-bottom: 30px;
 
     a {
+        border-radius: 6px;
+        display: inline-block;
         margin-right: 10px;
+        padding: 5px 10px;
+
+        &.active {
+            background: $primary;
+            color: white;
+        }
     }
 }
 
