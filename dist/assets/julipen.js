@@ -329,7 +329,11 @@ define('julipen/controllers/object', ['exports', 'ember'], function (exports, _e
   exports['default'] = _ember['default'].Controller;
 });
 define('julipen/dashboard/route', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Route.extend({});
+  exports['default'] = _ember['default'].Route.extend({
+    model: function model() {
+      return this.store.query('shot');
+    }
+  });
 });
 define("julipen/dashboard/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
@@ -345,7 +349,7 @@ define("julipen/dashboard/template", ["exports"], function (exports) {
             },
             "end": {
               "line": 5,
-              "column": 31
+              "column": 36
             }
           },
           "moduleName": "julipen/dashboard/template.hbs"
@@ -462,7 +466,7 @@ define("julipen/dashboard/template", ["exports"], function (exports) {
         morphs[2] = dom.createMorphAt(dom.childAt(fragment, [4]), 1, 1);
         return morphs;
       },
-      statements: [["block", "link-to", ["singles"], [], 0, null, ["loc", [null, [5, 2], [5, 43]]]], ["block", "link-to", ["projects"], [], 1, null, ["loc", [null, [6, 2], [6, 45]]]], ["content", "outlet", ["loc", [null, [9, 2], [9, 12]]]]],
+      statements: [["block", "link-to", ["singles", ["get", "shot", ["loc", [null, [5, 23], [5, 27]]]]], [], 0, null, ["loc", [null, [5, 2], [5, 48]]]], ["block", "link-to", ["projects"], [], 1, null, ["loc", [null, [6, 2], [6, 45]]]], ["content", "outlet", ["loc", [null, [9, 2], [9, 12]]]]],
       locals: [],
       templates: [child0, child1]
     };
@@ -990,7 +994,7 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+b1405fbf"});
+  require("julipen/app")["default"].create({"name":"julipen","version":"0.0.0+4553c437"});
 }
 
 /* jshint ignore:end */
