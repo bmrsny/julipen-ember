@@ -1,12 +1,21 @@
 <header class="j-header">
 	<img src="http://placehold.it/40x40" class="logo">
 	<h2>Julipen</h2>
+	{{nav-bar session=session}}
 </header>
-<div class="nav" style="margin-top: 100px;">{{nav-bar session=session}}</div>
 
 <div class="page-wrap">
 	<div class="container">
-		{{outlet}}
+		<h1>
+		  WE ARE HERE!!!
+		</h1>
+		<div>
+		  {{#link-to 'singles'}}Singles{{/link-to}}
+		  {{#link-to 'projects'}}Projects{{/link-to}}
+		</div>
+		<div>
+		  {{outlet}}
+		</div>
 	</div>
 </div>
 
