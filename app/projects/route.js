@@ -11,12 +11,12 @@ export default Ember.Route.extend({
        description: this.controller.get('description')
      });
      project.save().then(() => {
-       console.log('save successful');
+       Ember.Logger.log('save successful');
        this.controller.set('title',null);
        this.controller.set('description',null);
        this.refresh();
      }, function() {
-       console.log('save failed');
+       Ember.Logger.log('save failed');
      });
    }
  }
