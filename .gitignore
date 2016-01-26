@@ -16,7 +16,7 @@ assets
 assets/bpm_libs.js
 assets/bpm_styles.css
 coverage
-/dist
+dist
 docs
 lib/*/tests/all.js
 lib/*/tests/qunit*
