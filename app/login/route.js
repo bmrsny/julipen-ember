@@ -13,7 +13,7 @@ session: Ember.inject.service(),
 
   actions : {
     authenticate : function(credentials) {
-      this.get('session').authenticate('authenticator:token', credentials).then(() => {
+      this.get('session').authenticate('authenticator:jwt', credentials).then(() => {
         this.transitionTo("/");
       });
     }
