@@ -1,20 +1,25 @@
-<div class="field">
- Title: {{input value=title}}
-</div>
+<div class="add-proj">
+	<div class="field">
+		<span>Title:</span> {{input value=title}}
+	</div>
 
-<div class="field">
- Description: {{input value=description}}
-</div>
+	<div class="field">
+		<span>Description:</span> {{input value=description}}
+	</div>
 
-<button {{action 'addProject'}}>Add Project</button>
+	<button {{action 'addProject'}}>Add Project</button>
+</div>
 
 {{#each model as |project| }}
- <div>
-   {{#link-to 'projects.project' project }}
-     {{ project.title }}
-   {{/link-to}}
-   {{ project.description }}
- </div>
+	<div class="project">
+		<h4>
+			{{#link-to 'projects.project' project }}
+				{{ project.title }}
+			{{/link-to}}
+		</h4>
+
+		<span class="desc">{{ project.description }}</span>
+	</div>
 {{/each}}
 
 {{outlet}}

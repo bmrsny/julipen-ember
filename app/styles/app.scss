@@ -4,6 +4,7 @@ $primary: #314480;
 
 @import "header";
 @import "dot";
+@import "shot";
 
 * {
     box-sizing: border-box;
@@ -15,6 +16,7 @@ html, body > .ember-view { height: 100%; }
 
 body {
     background: #333;
+    color: white;
     font-family: Lato, Helvetica, Arial, sans-serif;
     height: 100%;
 }
@@ -38,6 +40,18 @@ a {
     text-decoration: none; 
 }
 
+button {
+    background: $primary;
+    border: 0 none;
+    color: white;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 10px;
+    padding: 8px 14px;
+    text-transform: uppercase;
+}
+
 .tabs {
     margin-bottom: 30px;
 
@@ -57,6 +71,7 @@ a {
 .container {
     margin: 0 auto;
     max-width: 1140px;
+    padding: 0 10px;
 }
 
 .page-wrap {
@@ -73,30 +88,6 @@ a {
     }
 }
 
-.screenshot {
-    margin: 0 auto;
-    max-width: 1280px;
-}
-
-.s-desc {
-    color: #CCC;
-    font-size: 14px;
-    margin-bottom: 40px;
-}
-
-.s-shot {
-    box-shadow:1px 1px 4px rgba(0,0,0,0.5);
-    margin: 0 auto 40px;
-    max-height: 720px;
-    max-width: 1280px;
-    position: relative;
-
-    img {
-        display: block;
-        max-height: 100%;
-        max-width: 100%;
-    }
-}
 
 .j-footer {
     color: #555;
@@ -106,27 +97,31 @@ a {
     text-align: center;
 }
 
-// #drop {
-//     border: 2px dashed currentColor;
-//     border-radius: 10px;
-//     color: #AAA;
-//     margin: 0 auto 50px;
-//     text-align: center;
-//     max-width: 480px;
-//     padding: 50px 10px;
-//     transition: all 0.3s;
+.add-proj {
+    background: #222;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
 
-//     &:not(:only-child) {
-//         width: 100%;
-//     }
+    .field {
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
 
-//     &.hover {
-//         background: rgba(0,0,0,0.2);
-//         color: $primary;
-//     }
+        span {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
 
-//     i {
-//         display: block;
-//         margin: 0 auto 10px;
-//     }
-// }
+        input {
+            display: inline-block;
+            height: 30px;
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
+    }
+
+    button {
+        vertical-align: middle;
+    }
+}

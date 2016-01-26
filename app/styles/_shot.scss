@@ -1,0 +1,24 @@
+.screenshot {
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+.s-desc {
+    color: #CCC;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.s-shot {
+    box-shadow:1px 1px 4px rgba(0,0,0,0.5);
+    margin: 0 auto 40px;
+    max-height: 720px;
+    max-width: 1280px;
+    position: relative;
+
+    img {
+        display: block;
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
