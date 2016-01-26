@@ -52,10 +52,11 @@ module.exports = function(environment) {
   ENV['ember-simple-auth-token'] = {
   serverTokenEndpoint: '/api/tokens',
   identificationField: 'email',
+  crossOriginWhitelist: ['*'],
+  authorizationHeaderName: 'Authorization',
   // passwordField: 'password',
   // tokenPropertyName: 'token',
   // authorizationPrefix: 'Bearer ',
-  authorizationHeaderName: 'Authorization',
   // headers: {},
 };
 
