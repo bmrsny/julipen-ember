@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+session: Ember.inject.service(),
+
   model : function (argument) {
     return Ember.Object.create({ identification: '', password: '' });
   }, 
@@ -11,7 +13,7 @@ export default Ember.Route.extend({
 
   actions : {
     authenticate : function(credentials) {
-      this.get('session').authenticate('simple-auth-authenticator:jwt', credentials).then(() => {
+      this.get('session').authenticate('authenticator:token', credentials).then(() => {
         this.transitionTo("/");
       });
     }

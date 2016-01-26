@@ -19,14 +19,6 @@ module.exports = function(environment) {
     }
   };
 
-  ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:token'
-  }
-
-  ENV['simple-auth-token'] = {
-    identificationField: 'email',
-    serverTokenEndpoint: '/api/tokens'
-  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -50,6 +42,15 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
+  }
+
+  ENV['ember-simple-auth'] = {
+    authorizer: 'authorizer:token'
+  }
+
+  ENV['ember-simple-auth-token'] = {
+    identificationField: 'email',
+    serverTokenEndpoint: '/api/tokens'
   }
 
   return ENV;
