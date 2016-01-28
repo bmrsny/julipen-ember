@@ -7,26 +7,6 @@ module.exports = function(app) {
   var nedb = require('nedb');
   var shotDB = new nedb({ filename: 'shots', autoload: true});
 
-  var shots = [
-    {
-      id: 100,
-      title: "single1",
-      description: "This is single"
-    },
-    {
-      id: 101,
-      title: "single2",
-      description: "This is single"
-    },
-    {
-      id: 102,
-      title: "shot not single",
-      description: "This is a shot",
-      project_id: 2
-    }
-
-  ]
-
   shotsRouter.get('/', function(req, res) {
     shotDB.find(req.query).exec(function(error, shots) {
       res.send({
