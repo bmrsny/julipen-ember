@@ -1,1 +1,24 @@
+<div class="add-shot">
+	<div class="field">
+		<span>Title:</span> {{input value=title}}
+	</div>
+
+	<div class="field">
+		<span>Description:</span> {{input value=description}}
+	</div>
+
+	<button {{action 'addShot'}}>Add Shot</button>
+</div>
+{{#each model as |shot| }}
+	<div class="shot">
+		<h4>
+			{{#link-to 'projects.project.shots' shot.id }}
+				{{ shot.title }}
+			{{/link-to}}
+		</h4>
+
+		<span class="desc">{{ shot.description }}</span>
+	</div>
+{{/each}}
+
 {{outlet}}

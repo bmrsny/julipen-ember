@@ -7,16 +7,4 @@ var Project = DS.Model.extend({
   shots: DS.hasMany("shot")
 });
 
-Project.reopenClass({
-  FIXTURES: [
-    {
-      id: 1,
-      title: "Unicorns",
-      description: "They fly and stuff",
-      user: 1,
-      shot: 1
-    }
-  ]
-});
-
 export default Project;

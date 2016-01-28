@@ -1,4 +1,17 @@
 <h1>
   SINGLES ARE HERE!!!
 </h1>
+
+{{#each model as |shot| }}
+	<div class="shot">
+		<h4>
+			{{#link-to 'singles' shot.id }}
+				{{ shot.title }}
+			{{/link-to}}
+		</h4>
+
+		<span class="desc">{{ shot.description }}</span>
+	</div>
+{{/each}}
+
 {{outlet}}

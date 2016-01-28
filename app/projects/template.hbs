@@ -13,7 +13,7 @@
 {{#each model as |project| }}
 	<div class="project">
 		<h4>
-			{{#link-to 'projects.project' project }}
+			{{#link-to 'projects.project' project.id }}
 				{{ project.title }}
 			{{/link-to}}
 		</h4>
