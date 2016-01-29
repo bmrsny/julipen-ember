@@ -11,7 +11,7 @@ export default Ember.Route.extend({
         this.paramsFor('projects.project').project_id).then(
           (project) => {
             console.log(project);
-            var shot = this.store.createRecord('shot', {
+            var shot = this.sktore.createRecord('shot', {
               title: this.controller.get('title'),
               description: this.controller.get('description'),
               project: project
