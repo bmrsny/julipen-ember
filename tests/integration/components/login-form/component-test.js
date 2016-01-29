@@ -12,7 +12,9 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{login-form}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$('H2').text().trim(), 'Log in');
+  assert.equal(this.$('.identification').text().trim(), 'Email');
+  assert.equal(this.$('.password').text().trim(), 'Password');
 
   // Template block usage:" + EOL +
   this.render(hbs`
@@ -21,5 +23,5 @@ test('it renders', function(assert) {
     {{/login-form}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  // assert.equal(this.$().text().trim(), 'Log in');
 });
