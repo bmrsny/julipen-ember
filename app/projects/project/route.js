@@ -8,7 +8,7 @@ export default Ember.Route.extend({
   actions: {
     addShot: function() {
       this.store.findRecord('project',
-        this.paramsFor('projects.project.shots').project_id).then(
+        this.paramsFor('projects.project').project_id).then(
           (project) => {
             console.log(project);
             var shot = this.store.createRecord('shot', {
