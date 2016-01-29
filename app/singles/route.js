@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-    return this.store.findAll('shot');
+    return this.store.query('shot', { isSingle: "true"});
   },
 
   actions: {
@@ -10,6 +10,7 @@ export default Ember.Route.extend({
       var shot = this.store.createRecord('shot', {
         title: this.controller.get('title'),
         description: this.controller.get('description'),
+        isSingle: "true"
       });
       shot.save().then(() => {
         Ember.Logger.log('save successful');

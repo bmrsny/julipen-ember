@@ -1,5 +1,8 @@
-{"source":null,"title":"shot1","description":"for project1","project":"1","user":null,"id":1,"_id":"HfTujKGc1LwYjJkR"}
-{"source":null,"title":"shot2","description":"project2","project":"1","user":null,"id":2,"_id":"5Awwd0xCNLz3aJnn"}
-{"source":null,"title":"shot3","description":"project2","project":"1","user":null,"id":3,"_id":"szmfKN9FAZ0VFUHa"}
-{"source":null,"title":"shot4","description":"project2","project":"1","user":null,"id":4,"_id":"zX12mk9BzpSrGn4z"}
-{"source":null,"title":"new in 2","description":"new for 2","project":"2","user":null,"id":5,"_id":"RdmJEHO2wnivBOgh"}
+{"source":null,"title":"shot1","description":"project1","isSingle":"false","project":"1","user":null,"id":1,"_id":"NLiqWPLtfSR1UwO9"}
+{"source":null,"title":"shot11","description":"project1","isSingle":"false","project":"1","user":null,"id":2,"_id":"2Dj33eR6qLxy8Gui"}
+{"source":null,"title":"shot2","description":"project2","isSingle":"false","project":"2","user":null,"id":3,"_id":"MYDaqUJHRyxtU1CB"}
+{"source":null,"title":"shot3","description":"project3","isSingle":"false","project":"3","user":null,"id":4,"_id":"WP8hxNlujvbYi6xU"}
+{"source":null,"title":"shot33","description":"project3","isSingle":"false","project":"3","user":null,"id":5,"_id":"ElUptdc24lTf6Cz0"}
+{"source":null,"title":"single1","description":"single","isSingle":"true","project":null,"user":null,"id":6,"_id":"FDvRoyeYCQ8CyTIZ"}
+{"source":null,"title":"single2","description":"another single","isSingle":"true","project":null,"user":null,"id":7,"_id":"9rFgHM8brZ4G40AF"}
+{"source":null,"title":"single3","description":"one more single","isSingle":"true","project":null,"user":null,"id":8,"_id":"0BFLHJ1KcZhK2htT"}
