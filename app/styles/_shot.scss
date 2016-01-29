@@ -22,3 +22,34 @@
         max-width: 100%;
     }
 }
+
+
+
+.add-shot {
+    background: #222;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+
+    .field {
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+
+        span {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        input {
+            display: inline-block;
+            height: 30px;
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
+    }
+
+    button {
+        vertical-align: middle;
+    }
+}
