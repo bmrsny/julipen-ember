@@ -39,10 +39,7 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-simple-auth": "1.0.1",
-<<<<<<< HEAD
     "ember-simple-auth-token": "1.0.0",
-=======
->>>>>>> master
     "express": "^4.13.3",
     "glob": "^4.5.3",
     "jsonwebtoken": "^5.5.4",

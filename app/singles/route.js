@@ -1,11 +1,7 @@
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-<<<<<<< HEAD
-
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
-=======
-export default Ember.Route.extend({
   model: function() {
     return this.store.query('shot', { isSingle: "true"});
   },
@@ -27,5 +23,4 @@ export default Ember.Route.extend({
       });
     }
   }
->>>>>>> master
 });
