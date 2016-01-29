@@ -1,4 +1,29 @@
 <h1>
   SINGLES ARE HERE!!!
 </h1>
+
+<div class="add-single">
+	<div class="field">
+		<span>Title:</span> {{input value=title}}
+	</div>
+
+	<div class="field">
+		<span>Description:</span> {{input value=description}}
+	</div>
+
+	<button {{action 'addSingle'}}>Add Single</button>
+</div>
+
+{{#each model as |single| }}
+	<div class="single">
+    <h4>
+			{{#link-to 'singles.shots' single }}
+				{{ single.title }}
+			{{/link-to}}
+		</h4>
+
+		<span class="desc">{{ single.description }}</span>
+	</div>
+{{/each}}
+
 {{outlet}}

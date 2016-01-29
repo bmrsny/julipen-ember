@@ -2,36 +2,36 @@
 module.exports = function(app) {
   var express = require('express');
   var shotsRouter = express.Router();
-  var shots = [
-   {
-      id: 1,
-     source: "/images/shot1.jpg",
-      title: "Unicorn Dancing",
-      description: "This is a picture of a unicorn doing the macarena",
-      project: 1,
-      user: 1,
-      comment: 1
-    },
-    {
-      id: 2,
-     source: "/images/shot2.jpg",
-      title: "Turtle Dancing",
-      description: "This is a picture of a turtle doing the electric slide",
-      project: 1,
-      user: 2,
-      comment: 2
-    }
-  ]
+  var bodyParser = require('body-parser');
+  app.use(bodyParser.json());
+  var nedb = require('nedb');
+  var shotDB = new nedb({ filename: 'shots', autoload: true});
 
   shotsRouter.get('/', function(req, res) {
-    res.send({
-      'shots': shots
+    shotDB.find(req.query).exec(function(error, shots) {
+      res.send({
+        'shots': shots
+      });
     });
   });
 
   shotsRouter.post('/', function(req, res) {
-    res.status(201).end();
+    shotDB.find({}).sort({id : -1}).limit(1).exec(function(err, shots) {
+      if (shots.length !=0)
+        req.body.shot.id = shots[0].id + 1;
+      else
+        req.body.shot.id = 1;
+      shotDB.insert(req.body.shot, function(err, newShot) {
+        res. status(201);
+        res.send(
+          JSON.stringify(
+          {
+            shot : newShot
+          }));
+      });
+    })
   });
+
 
   shotsRouter.get('/:id', function(req, res) {
     res.send({
