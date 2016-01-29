@@ -12,7 +12,9 @@ Router.map(function() {
       this.route('shots', { path: '/shots/:shot_id'}, function() {});
     });
   });
-  this.route('singles');
+  this.route('singles', { path: '/singles' }, function() {
+    this.route('shots', { path: '/:shot_id'}, function() {});
+  });
 });
 
 export default Router;
