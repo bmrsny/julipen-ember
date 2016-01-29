@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function(params) {
-    return this.store.query('shot', { project: params.project_id });
+    return this.store.findAll('shot', { project: params.project_id });
   },
 
   actions: {
@@ -21,9 +21,8 @@ export default Ember.Route.extend({
               console.log('save successful');
               this.controller.set('title',null);
               this.controller.set('description',null);
-              this.refresh();
             }, function() {
-              Ember.Logger.log('save failed');
+              console.log('save failed');
             });
           });
     }
