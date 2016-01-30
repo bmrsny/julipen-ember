@@ -1,0 +1,7 @@
+<div class="tabs">
+  {{#link-to 'singles'}}Singles{{/link-to}}
+  {{#link-to 'projects'}}Projects{{/link-to}}
+  <button {{action "create"}} class="create-new">+ New {{title}}</button>
+</div>
+
+{{yield}}

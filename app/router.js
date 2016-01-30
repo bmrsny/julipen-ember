@@ -13,7 +13,7 @@ Router.map(function() {
       this.route('shots', { path: '/shots/:shot_id'}, function() {});
     });
   });
-  this.route('singles', { path: '/singles' }, function() {
+  this.route('singles', { path: '/' }, function() {
     this.route('shots', { path: '/:shot_id'}, function() {});
   });
 });

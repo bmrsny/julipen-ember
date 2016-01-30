@@ -1,4 +1,5 @@
-<div class="add-proj">
+<!-- The project creation html should live elsewhere. Wireframe suggests turning it into a component -->
+<!-- <div class="add-proj">
 	<div class="field">
 		<span>Title:</span> {{input value=title}}
 	</div>
@@ -8,8 +9,8 @@
 	</div>
 
 	<button {{action 'addProject'}}>Add Project</button>
-</div>
-<h2>Projects</h2>
+</div> -->
+{{dash-board title="project" create="create"}}
 
 {{#each model as |project| }}
 	<div class="project">
@@ -24,5 +25,3 @@
     No projects here...
   </p>
 {{/each}}
-
-{{outlet}}
