@@ -12,15 +12,15 @@
 </div> -->
 {{dash-board title="single" create="create"}}
 
-{{#each model as |single| }}
+{{#each model as |shot| }}
 	<div class="single">
     <h4>
-			{{#link-to 'singles.shots' single }}
-				{{ single.title }}
+			{{#link-to 'singles-shots' shot }}
+				{{ shot.title }}
 			{{/link-to}}
 		</h4>
 
-		<span class="desc">{{ single.description }}</span>
+		<span class="desc">{{ shot.description }}</span>
 	</div>
 {{else}}
   <p>
