@@ -6,7 +6,9 @@ export default Ember.Component.extend({
       this.sendAction("closeModal");
     },
     addShot: function() {
-      this.sendAction("addShot");
+      let title = this.get('title');
+      let description = this.get('description');
+      this.sendAction("addShot", title, description);
     }
   }
 });
