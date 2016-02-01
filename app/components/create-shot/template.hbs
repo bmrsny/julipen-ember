@@ -1,0 +1,17 @@
+{{#modal-dialog translucentOverlay=true}}
+  <div class="close">
+    <button {{action "closeModal"}} type="button" class="close-button">X</button>
+  </div>
+  <div class="add-shot">
+  	<div class="field">
+  		<span>Title:</span> {{input value=title}}
+  	</div>
+
+  	<div class="field">
+  		<span>Description:</span> {{input value=description}}
+  	</div>
+
+  	<button {{action 'addShot'}}>Add Shot</button>
+  </div>
+{{/modal-dialog}}  
+{{yield}}

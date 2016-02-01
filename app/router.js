@@ -8,11 +8,16 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('login');
   this.route('wildcard', { path: '/*wildcard' });
-  
-  this.route('projects', { path: '/projects' });
-  this.route('project', {path: '/projects/:project_id' });
-  
-  this.route('singles', { path: '/' }, function() {});
+
+  this.route('projects', { path: '/projects' }, function() {
+    this.route('create_project');
+  });
+  this.route('project', {path: '/projects/:project_id' }, function() {
+    this.route('create_shot');
+  });
+  this.route('singles', { path: '/' }, function() {
+    this.route('create_shot');
+  });
   this.route('shots', { path: 'shots/:shot_id' });
 });
 

@@ -7,16 +7,20 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
 
   actions: {
-    addSingle: function() {
+    addShot: function(title, description) {
+      var project = this.store.peekRecord('project', 1);
+
       var shot = this.store.createRecord('shot', {
-        title: this.controller.get('title'),
-        description: this.controller.get('description'),
-        isSingle: "true"
+        title: title,
+        description: description,
+        project: project
       });
+
       shot.save().then(() => {
         Ember.Logger.log('save successful');
         this.controller.set('title',null);
         this.controller.set('description',null);
+        this.transitionTo('/');
         this.refresh();
       }, function() {
         console.Logger.log('save failed');
