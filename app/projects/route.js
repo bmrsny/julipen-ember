@@ -20,7 +20,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
        this.controller.set('description',null);
        this.refresh();
      }, function() {
-       Ember.Logger.log('save failed');
+       console.log('save failed');
      });
    }
  }
