@@ -1,0 +1,11 @@
+<h1>Dashboard</h1>
+<div class="tabs">
+  {{#link-to 'singles'}}Singles{{/link-to}}
+  {{#link-to 'projects'}}Projects{{/link-to}} 
+  {{#if projectTitle }}
+    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{projectTitle}}
+  {{/if}}
+  <button {{action "create"}} class="create-new">+ New {{title}}</button>
+</div>
+
+{{yield}}

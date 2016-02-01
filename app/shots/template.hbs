@@ -1,4 +1,6 @@
-<h2>SHOT Title: {{model.title}}</h2>
 <h4>Title: {{model.title}}</h4>
+{{#if model.project}}
+  <p>{{model.project.title}}</p>
+{{/if}}
 <h4>Description: {{model.description}}</h4>
 {{outlet}}

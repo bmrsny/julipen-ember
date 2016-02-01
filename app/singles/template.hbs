@@ -1,8 +1,5 @@
-<h1>
-  SINGLES ARE HERE!!!
-</h1>
-
-<div class="add-single">
+<!-- The shot creation html should live elsewhere. Wireframe suggests turning it into a component -->
+<!-- <div class="add-single">
 	<div class="field">
 		<span>Title:</span> {{input value=title}}
 	</div>
@@ -12,17 +9,18 @@
 	</div>
 
 	<button {{action 'addSingle'}}>Add Single</button>
-</div>
+</div> -->
+{{dash-board title="single" create="create"}}
 
-{{#each model as |single| }}
+{{#each model as |shot| }}
 	<div class="single">
     <h4>
-			{{#link-to 'singles.shots' single }}
-				{{ single.title }}
+			{{#link-to 'shots' shot }}
+				{{ shot.title }}
 			{{/link-to}}
 		</h4>
 
-		<span class="desc">{{ single.description }}</span>
+		<span class="desc">{{ shot.description }}</span>
 	</div>
 {{else}}
   <p>
