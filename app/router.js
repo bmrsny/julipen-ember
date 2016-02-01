@@ -11,10 +11,11 @@ Router.map(function() {
   
   this.route('projects', { path: '/projects' });
   this.route('project', {path: '/projects/:project_id' });
-  this.route('project-shots', { path: '/projects/:project_id/shots/:shot_id' });
+  // this.route('project-shots', { path: '/shots/:shot_id' });
   
   this.route('singles', { path: '/' }, function() {});
-  this.route('singles-shots', { path: 'shots/:shot_id' });
+  // this.route('singles-shots', { path: 'shots/:shot_id' });
+  this.route('shots', { path: 'shots/:shot_id' });
 });
 
 export default Router;
