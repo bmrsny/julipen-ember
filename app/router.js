@@ -12,8 +12,12 @@ Router.map(function() {
   this.route('projects', { path: '/projects' }, function() {
     this.route('create_project');
   });
-  this.route('project', {path: '/projects/:project_id' });
-  this.route('singles', { path: '/' }, function() {});
+  this.route('project', {path: '/projects/:project_id' }, function() {
+    this.route('create_shot');
+  });
+  this.route('singles', { path: '/' }, function() {
+    this.route('create_shot');
+  });
   this.route('shots', { path: 'shots/:shot_id' });
 });
 
