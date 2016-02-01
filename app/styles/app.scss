@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,400italic,700);
+@import "node_modules/ember-modal-dialog/app/styles/ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
 $primary: #314480;
 
 
@@ -119,7 +121,7 @@ button {
             vertical-align: middle;
         }
     }
-
+    
     button {
         vertical-align: middle;
     }

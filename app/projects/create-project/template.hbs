@@ -1,0 +1,19 @@
+{{#modal-dialog translucentOverlay=true}}
+  <div class="add-proj">
+    <div class="close">
+      <button {{action "closeModal"}} type="button" class="close-button">X</button>
+    </div>
+    
+    <div class="field">
+      <span>Title:</span> {{input value=title}}
+    </div>
+
+    <div class="field">
+      <span>Description:</span> {{input value=description}}
+    </div>
+
+    <button {{action 'addProject'}}>Add Project</button>
+  </div>
+{{/modal-dialog}}
+
+{{outlet}}
