@@ -5,14 +5,14 @@ export default Ember.Route.extend({
     closeModal: function() {
     this.transitionTo('project', this.paramsFor("project").project_id);
     }, 
-    addShot: function() {
+    addShot: function(title, description) {
       this.store.findRecord('project',
         this.paramsFor('project').project_id).then(
         (project) => {
           console.log(project);
           var shot = this.store.createRecord('shot', {
-            title: this.controller.get('title'),
-            description: this.controller.get('description'),
+            title: title,
+            description: description,
             project: project
           });
           console.log(shot);
