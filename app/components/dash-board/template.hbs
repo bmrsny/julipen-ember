@@ -5,13 +5,13 @@
   {{#if projectTitle }}
     >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{projectTitle}}
   {{/if}}
-  <!-- <button {{action "create"}} class="create-new">+ New {{title}}</button> -->
+
   {{#if isProject}}
-    {{#link-to "projects.create_project" class="create-new"}}+ New {{title}}{{/link-to}}
+    <button class="create-new">{{#link-to "projects.create_project" class="create-new"}}+ New {{title}}{{/link-to}}</button>
   {{else if projectTitle}}
-    {{#link-to "project.create_shot" class="create-new"}}+ New {{title}}{{/link-to}}
+    <button class="create-new">{{#link-to "project.create_shot" class="create-new"}}+ New {{title}}{{/link-to}}</button>
   {{else}}
-    {{#link-to "singles.create_shot" class="create-new"}}+ New {{title}}{{/link-to}}
+    <button class="create-new">{{#link-to "singles.create_shot" class="create-new"}}+ New {{title}}{{/link-to}}</button>
   {{/if}}
 </div>
 
