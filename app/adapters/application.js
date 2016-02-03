@@ -2,8 +2,9 @@ import DS from 'ember-data';
 // import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
 export default DS.RESTAdapter.extend({
-	namespace: 'api',
-	shouldReloadAll() {
-	    return true;
-	}
+  namespace: 'api',
+
+  shouldReloadAll() {
+   return true;
+  },
 });

@@ -8,7 +8,7 @@
 	{{#each model.shots as |shot| }}
 		<div class="shot">
 			<h4>
-				{{#link-to 'shots' shot }}
+				{{#link-to 'shots' shot.id }}
 					{{ shot.title }}
 				{{/link-to}}
 			</h4>
