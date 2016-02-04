@@ -1,0 +1,19 @@
+{{dash-board title="single"}}
+
+{{#each model as |shot| }}
+	<div class="single">
+    <h4>
+			{{#link-to 'shots' shot }}
+				{{ shot.title }}
+			{{/link-to}}
+		</h4>
+
+		<span class="desc">{{ shot.description }}</span>
+	</div>
+{{else}}
+  <p>
+    No singles here...
+  </p>
+{{/each}}
+
+{{outlet}}

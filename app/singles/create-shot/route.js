@@ -6,22 +6,22 @@ export default Ember.Route.extend({
       this.transitionTo('singles');
     },
     addShot: function(title, description) {
-      var project = this.store.findRecord('project', 1);
+      var project = this.store.findRecord('project', 1).then(project => {
+          var shot = this.store.createRecord('shot', {
+            title: title,
+            description: description,
+            project: project
+          });
 
-      var shot = this.store.createRecord('shot', {
-        title: title,
-        description: description,
-        project: project
-      });
-
-      shot.save().then(() => {
-        console.log('save successful');
-        this.controller.set('title',null);
-        this.controller.set('description',null);
-        this.transitionTo('singles');
-        this.refresh();
-      }, function() {
-        console.log('save failed');
+          console.log("about to save shot");
+          return shot.save().then(() => {
+            console.log('save successful');
+            this.controller.set('title',null);
+            this.controller.set('description',null);
+            this.transitionTo('singles');
+          }, function() {
+            console.log('save failed');
+          });
       });
     }
   }
